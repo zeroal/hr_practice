@@ -38,7 +38,7 @@ class Admins::DepartmentsController < AdminController
 	end
 
 	def show
-
+		@department = Department.find_by(id: params[:id])
 	end
 
 	def destroy
