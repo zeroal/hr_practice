@@ -1,0 +1,74 @@
+<body>
+   <!-- START wrapper-->
+   <div class="row row-table page-wrapper">
+      <div class="col-lg-3 col-md-6 col-sm-8 col-xs-12 align-middle">
+         <!-- START panel-->
+         <div data-toggle="play-animation" data-play="fadeIn" data-offset="0" class="panel panel-dark panel-flat">
+            <div class="panel-heading text-center mb-lg">
+               <a href="#">
+                  <img src="../app/img/logo.png" alt="Image" class="block-center img-rounded">
+               </a>
+               <p class="text-center mt-lg">
+                  <strong>SIGNUP TO GET INSTANT ACCESS.</strong>
+               </p>
+            </div>
+            <div class="panel-body">
+               <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+               <%= devise_error_messages! %>
+               <form role="form">
+                  <div class="form-group has-feedback">
+                     <label for="signupInputFirstName" class="text-muted">First Name</label>
+                     <%= f.text_field :first_name, autocomplete: "off", class:"form-control",placeholder: "Enter First Name"%>
+                  </div>
+
+                  <div class="form-group has-feedback">
+                     <label for="signupInputLastName" class="text-muted">Last Name</label>
+                     <%= f.text_field :last_name, autocomplete: "off", class:"form-control",placeholder: "Enter Last Name"%>
+                  </div>
+
+                  <div class="form-group has-feedback">
+                     <label for="signupInputEmail1" class="text-muted">Email address</label>
+                     <%= f.email_field :email, autocomplete: "email", class:"form-control",placeholder: "Enter email" %>
+                     <span class="fa fa-envelope form-control-feedback text-muted"></span>
+                  </div>
+
+                  <div class="form-group has-feedback">
+                     <label for="signupInputPassword1" class="text-muted">Password</label>
+                     <%= f.password_field :password, autocomplete: "off" , class:"form-control", placeholder: "Password"%>
+                     <span class="fa fa-lock form-control-feedback text-muted"></span>
+                  </div>
+                  <div class="form-group has-feedback">
+                     <label for="signupInputRePassword1" class="text-muted">Retype Password</label>
+                     <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control",placeholder: "Retype password" %>
+                     <span class="fa fa-lock form-control-feedback text-muted"></span>
+                  </div>
+
+                  <div class="form-group has-feedback">
+                     <label for="signupInputBirthDate" class="text-muted">Birth Date</label>
+                     
+                     <div data-pick-time="false" class=" input-group date mb-lg" id="birth_date">            
+                        <%= f.text_field :birth_date, class: "form-control" %>
+                          <span class="input-group-addon">
+                            <span class="fa fa-calendar"></span>
+                          </span>
+                     </div>
+                  </div>
+
+                  <%= f.submit "Sign up",class:"btn btn-block btn-success"%>
+               </form>
+              <% end %> 
+            </div>
+         </div>
+         <!-- END panel-->
+      </div>
+   </div>
+
+</body>
+
+<script type="text/javascript"> 
+  $(function () {
+      $('#birth_date').datetimepicker({
+        format: 'DD/MM/YYYY'
+      });
+  });
+</script>

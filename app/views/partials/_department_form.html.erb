@@ -1,0 +1,33 @@
+<%= form_for(@department,url: admins_departments_path(@department)) do |f| %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Create New Department</div>
+  <div class="panel-body">
+    <form class="form-horizontal">
+       <fieldset>
+          <div class="form-group">
+             <div class="form-group">
+              <label class="col-lg-2 control-label">Name</label>
+              <div class="col-lg-10">
+                <%= f.text_field :name, class: "form-control" %>
+              </div>
+            </div>
+          </div>
+       </fieldset>
+
+       <fieldset>
+          <div class="form-group">
+            <label class="col-lg-2 control-label">Description</label>
+            <div class="col-lg-10">
+              <%= f.text_area :description,class: "form-control" %>
+            </div>
+          </div>          
+       </fieldset>
+     </form>
+
+      <div class="actions">
+        <%= f.submit "Save",class: "btn btn-success" %>
+      </div> 
+  </div>
+</div>
+<% end %>

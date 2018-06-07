@@ -1,0 +1,83 @@
+<%= form_for(@vacancy, url: admins_vacancies_path(@vacancy)) do |f| %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Create New Vacancy</div>
+  <div class="panel-body">
+    <form class="form-horizontal">
+       <fieldset>
+          <div class="form-group">
+             <div class="form-group">
+              <label class="col-lg-2 control-label">Title</label>
+              <div class="col-lg-10">
+                <%= f.text_field :title, class: "form-control" %>
+              </div>
+            </div>
+          </div>
+       </fieldset>
+
+       <fieldset>
+          <div class="form-group">
+            <label class="col-lg-2 control-label">Description</label>
+            <div class="col-lg-10">
+              <%= f.text_area :description,class: "form-control" %>
+            </div>
+          </div>          
+       </fieldset>
+
+       <fieldset>
+          <div class="form-group">
+            <label class="col-lg-2 control-label">Department</label>
+            <div class="col-lg-10">
+              <%= f.select :department_id, @departments.collect { |deparment| [deparment.name, deparment.id] }, :prompt => 'Select One' %>
+            </div>
+          </div>          
+       </fieldset>
+
+       <fieldset>
+          <div class="form-group">
+            <label class="col-lg-2 control-label">Start Date</label>
+              <div class="col-lg-10">
+                <div data-pick-time="false" class=" input-group date mb-lg" id="start_date">             
+                  <%= f.text_field :start_date, class: "form-control" %>
+                    <span class="input-group-addon">
+                      <span class="fa fa-calendar"></span>
+                    </span>
+                </div>
+              </div>
+          </div>
+       </fieldset>
+
+        <fieldset>
+          <div class="form-group">
+            <label class="col-lg-2 control-label">End Date</label>
+              <div class="col-lg-10">
+                <div data-pick-time="false" class=" input-group date mb-lg" id="end_date">             
+                  <%= f.text_field :end_date, class: "form-control" %>
+                    <span class="input-group-addon">
+                      <span class="fa fa-calendar"></span>
+                    </span>
+                </div>
+              </div>
+          </div>
+       </fieldset>
+     </form>
+
+      <div class="actions">
+        <%= f.submit "Save",class: "btn btn-success" %>
+      </div> 
+  </div>
+</div>
+<% end %>
+
+<script type="text/javascript"> 
+  $(function () {
+      $('#start_date').datetimepicker({
+        format: 'DD/MM/YYYY'
+      });
+      
+      $('#end_date').datetimepicker({
+        format: 'DD/MM/YYYY'
+      });
+  });
+  
+</script>

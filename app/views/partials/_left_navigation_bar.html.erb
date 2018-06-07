@@ -1,0 +1,54 @@
+<aside class="aside">
+   <nav class="sidebar">
+      <ul class="nav">
+         <li class="nav-heading">Main</li>
+         <li class=<%= params[:controller] == "home" ? "active" : "" %>>
+            <a href="/home" class="no-submenu">
+               <em class="fa fa-dot-circle-o"></em>
+               <span class="item-text">Home</span>
+            </a> 
+         </li>
+
+         <li class=<%= params[:controller] == "admins/departments" ? "active" : "" %>>
+            <a href="#" data-toggle="collapse-next" class="has-submenu">
+               <em class="fa fa-flask"></em>
+               <span class="item-text">Departments</span>
+            </a>
+            <ul class="nav collapse<%= params[:controller] == "admins/departments" ? " in" : "" %>">
+               <li class=<%= params[:controller]== "departments" && params[:action]=="new" ? "active" : "" %>>
+                  <a href="/admins/departments/new" data-toggle="" class="no-submenu">
+                     <span class="item-text">New</span>
+                  </a>
+               </li>
+
+               <% @departments.each do |department| %>
+                  <li>
+                     <a href="/admins/departments/<%= department.id %>" data-toggle="" class="no-submenu">
+                        <span class="item-text"><%= department.name %></span>
+                     </a>
+                  </li>
+               <% end %>
+            </ul>
+         </li>
+
+         <li class=<%= params[:controller] == "admins/vacancies" ? "active" : "" %>>
+            <a href="#" data-toggle="collapse-next" class="has-submenu">
+               <em class="fa fa-flask"></em>
+               <span class="item-text">Vacancy</span>
+            </a>
+            <ul class="nav collapse<%= params[:controller] == "admins/vacancies" ? " in" : "" %>">
+               <li class=<%= params[:controller]== "admins/vacancies" && params[:action]=="new" ? "active" : "" %>>
+                  <a href="/admins/vacancies/new" data-toggle="" class="no-submenu">
+                     <span class="item-text">New</span>
+                  </a>
+               </li>
+               <li class=<%= params[:controller]== "admins/vacancies" && params[:action]=="index" ? "active" : "" %>>
+                  <a href="/admins/vacancies" data-toggle="" class="no-submenu">
+                     <span class="item-text">List</span>
+                  </a>
+               </li>
+            </ul>
+         </li>
+      </ul>
+   </nav>
+</aside>
