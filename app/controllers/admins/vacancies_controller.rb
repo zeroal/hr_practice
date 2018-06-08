@@ -25,6 +25,7 @@ class Admins::VacanciesController < AdminController
 
 	def index
 		@vacancies = Vacancy.all
+		#vacancy user recruitment
 	end
 
 	def edit
@@ -45,6 +46,11 @@ class Admins::VacanciesController < AdminController
 		vacancy.save
 
 		redirect_to action: "index"
+	end
+
+	def show
+		vacancy = Vacancy.find_by(id: params[:id])
+		@users = vacancy.users
 	end
 
 	def destroy

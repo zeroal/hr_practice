@@ -1,7 +1,7 @@
-<%= form_for(@department,url: admins_departments_path(@department)) do |f| %>
+<%= form_for(@department,url: locals[:path]) do |f| %>
 
 <div class="panel panel-default">
-  <div class="panel-heading">Create New Department</div>
+  <div class="panel-heading"><%= locals[:title] %></div>
   <div class="panel-body">
     <form class="form-horizontal">
        <fieldset>

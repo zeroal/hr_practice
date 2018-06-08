@@ -22,8 +22,8 @@
 	                                    <td><%= department.id %></td>
 	                                    <td><%= department.name%></td>
 	                                    <td>
-									  		<%= link_to 'Edit', edit_department_path(department) %> |
-									  		<%= link_to "Delete", department_path(department), method: :delete, :class => 'navbar-link'  %>
+									  		<%= link_to 'Edit', edit_admins_department_path(department) %> |
+									  		<%= link_to "Delete", admins_department_path(department), method: :delete, :class => 'navbar-link'  %>
 										</td>
 	                                 </tr>
                                  <% end %>

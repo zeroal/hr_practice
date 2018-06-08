@@ -15,7 +15,7 @@
 	    <% if @applied %>
 	    	<p class="btn btn-info btn-sm">Already Applied</p>
 	    <% else %>
-	    	<%= link_to "Apply",:class => 'btn btn-info btn-sm', remote: true  %>
+	    	<%= link_to "Apply",vacancy_path(@vacancy), remote: true, method: :post, id:'apply' , class: 'btn btn-info btn-sm' %>
 	    <% end%>
 	 </div>
 	 <!-- END Page content-->

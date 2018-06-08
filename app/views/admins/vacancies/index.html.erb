@@ -3,6 +3,18 @@
 
    <section>
       <div class="main-content">
+           <div class="col-lg-6">
+                  <!-- START panel-->
+                  <div class="panel panel-default">
+                     <div class="panel-heading">Modals</div>
+                     <div class="panel-body">
+                        <!-- Button trigger modal -->
+                        <button data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-lg">Launch Demo Modal</button>
+                     </div>
+                  </div>
+                  <!-- END panel-->
+               </div>
+
           <div class="col-lg-12">
                   <div class="panel panel-default">
                      <div class="panel-heading">Vacancies</div>
@@ -28,6 +40,7 @@
                                        <td><%= vacancy.start_date.to_date%></td>
                                        <td><%= vacancy.end_date.to_date%></td>
                                        <td>
+                                          <%= link_to 'View', admins_vacancy_path(vacancy), remote:true %> |
                                           <%= link_to 'Edit', edit_admins_vacancy_path(vacancy) %> |
                                           <%= link_to "Delete", admins_vacancy_path(vacancy), method: :delete, :class => 'navbar-link'  %>
                                        </td>
@@ -43,3 +56,20 @@
    </section>
       </div>
 </div>
+
+   <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+               <h4 id="myModalLabel" class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+               irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+            <div class="modal-footer">
+               <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+               <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+         </div>
+      </div>
+   </div>

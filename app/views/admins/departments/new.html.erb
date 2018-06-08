@@ -4,9 +4,7 @@
 	<section>
 	 
 	 <div class="main-content">
-	    <%= render "partials/department_form" %>
+	    <%= render "partials/department_form", locals: {title: "Create new department", path: admins_departments_path(@department)}  %>
 	 </div>
-	 
-	 
 	</section>
 </div>

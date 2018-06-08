@@ -19,13 +19,11 @@ class VacanciesController < ApplicationController
 		recruitment = Recruitment.new
 		vacancy = Vacancy.find_by(id:params["id"])
 
-		# recruitment.vacancy = vacancy
-		# recruitment.user = current_user
-		# recruitment.save
+		recruitment.vacancy = vacancy
+		recruitment.user = current_user
+		recruitment.save
 
 		# UserMailer.welcome_email().deliver_now
-
-		redirect_to action: "index"
 	end
 end
 

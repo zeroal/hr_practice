@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get '/vacancies', to: 'vacancies#index'
   get '/vacancies/:id', to: 'vacancies#show',as: 'vacancy'
   post '/vacancies/:id', to: 'vacancies#apply'
-  #usermailer
 
   namespace :admins do
     resources :departments,:vacancies
