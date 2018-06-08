@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HR</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "bootstrap.min" %> 
+  <%= stylesheet_link_tag "font-awesome.min" %> 
+  <%= stylesheet_link_tag "animate_animo" %> 
+  <%= stylesheet_link_tag "csspinner.min" %>
+  <%= stylesheet_link_tag "chosen.min" %>
+  <%= stylesheet_link_tag "slider" %>
+  <%= stylesheet_link_tag "bootstrap-datetimepicker.min" %> 
+  <%= stylesheet_link_tag "app" %>
+  <%= stylesheet_link_tag "common" %>
+  <%= javascript_include_tag "modernizr" %> 
+  <%= javascript_include_tag "fastclick" %> 
+</head>
+<body>
+	<div class="wrapper">
+		<%= render "partials/top_navigation_bar" %>
+		<%= render "partials/left_navigation_bar" %>
+		<%= yield %>
+	</div>
+</body>
+
+<%= javascript_include_tag "jquery.min" %> 
+<%= javascript_include_tag "bootstrap.min" %>
+<%= javascript_include_tag "pages" %> 
+<%= javascript_include_tag "chosen.jquery.min" %>
+<%= javascript_include_tag "bootstrap-slider" %>
+<%= javascript_include_tag "bootstrap-filestyle.min" %> 
+<%= javascript_include_tag "animo.min" %>
+<%= javascript_include_tag "jquery.sparkline.min" %>  
+<%= javascript_include_tag "jquery.slimscroll.min" %>
+<%= javascript_include_tag "store_json2.min" %>  
+<%= javascript_include_tag "jquery.classyloader.min" %>
+<%= javascript_include_tag "moment-with-langs" %>
+<%= javascript_include_tag "bootstrap-datetimepicker.min" %>
+<%= javascript_include_tag "jquery.flot.min" %>
+<%= javascript_include_tag "jquery.flot.tooltip.min" %>  
+<%= javascript_include_tag "jquery.flot.resize.min" %>
+<%= javascript_include_tag "jquery.flot.pie.min" %>
+<%= javascript_include_tag "jquery.flot.time.min" %>
+<%= javascript_include_tag "jquery.flot.categories.min" %>
+<%= javascript_include_tag "app" %> 
+
+</html>

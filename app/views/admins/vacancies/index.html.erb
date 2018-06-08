@@ -1,61 +1,56 @@
-<div class="wrapper">
-   <%= render "partials/left_navigation_bar" %>
-
-   <section>
-      <div class="main-content">
-           <div class="col-lg-6">
-                  <!-- START panel-->
-                  <div class="panel panel-default">
-                     <div class="panel-heading">Modals</div>
-                     <div class="panel-body">
-                        <!-- Button trigger modal -->
-                        <button data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-lg">Launch Demo Modal</button>
-                     </div>
+<section>
+   <div class="main-content">
+        <div class="col-lg-6">
+               <!-- START panel-->
+               <div class="panel panel-default">
+                  <div class="panel-heading">Modals</div>
+                  <div class="panel-body">
+                     <!-- Button trigger modal -->
+                     <button data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-lg">Launch Demo Modal</button>
                   </div>
-                  <!-- END panel-->
                </div>
+               <!-- END panel-->
+            </div>
 
-          <div class="col-lg-12">
-                  <div class="panel panel-default">
-                     <div class="panel-heading">Vacancies</div>
-                     <div class="panel-body">
-                        <div class="table-responsive table-bordered">
-                           <table class="table">
-                              <thead>
+       <div class="col-lg-12">
+               <div class="panel panel-default">
+                  <div class="panel-heading">Vacancies</div>
+                  <div class="panel-body">
+                     <div class="table-responsive table-bordered">
+                        <table class="table">
+                           <thead>
+                              <tr>
+                                 <th>Id</th>
+                                 <th>Title</th>
+                                 <th>Department</th>
+                                 <th>Start Date</th>
+                                 <th>End Date</th>
+                                 <th>Action</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                               <% @vacancies.each do |vacancy| %>
                                  <tr>
-                                    <th>Id</th>
-                                    <th>Title</th>
-                                    <th>Department</th>
-                                    <th>Start Date</th>
-                                    <th>End Date</th>
-                                    <th>Action</th>
+                                    <td><%= vacancy.id %></td>
+                                    <td><%= vacancy.title%></td>
+                                    <td><%= vacancy.department.name%></td>
+                                    <td><%= vacancy.start_date.to_date%></td>
+                                    <td><%= vacancy.end_date.to_date%></td>
+                                    <td>
+                                       <%= link_to 'View', admins_vacancy_path(vacancy), remote:true %> |
+                                       <%= link_to 'Edit', edit_admins_vacancy_path(vacancy) %> |
+                                       <%= link_to "Delete", admins_vacancy_path(vacancy), method: :delete, :class => 'navbar-link'  %>
+                                    </td>
                                  </tr>
-                              </thead>
-                              <tbody>
-                                  <% @vacancies.each do |vacancy| %>
-                                    <tr>
-                                       <td><%= vacancy.id %></td>
-                                       <td><%= vacancy.title%></td>
-                                       <td><%= vacancy.department.name%></td>
-                                       <td><%= vacancy.start_date.to_date%></td>
-                                       <td><%= vacancy.end_date.to_date%></td>
-                                       <td>
-                                          <%= link_to 'View', admins_vacancy_path(vacancy), remote:true %> |
-                                          <%= link_to 'Edit', edit_admins_vacancy_path(vacancy) %> |
-                                          <%= link_to "Delete", admins_vacancy_path(vacancy), method: :delete, :class => 'navbar-link'  %>
-                                       </td>
-                                    </tr>
-                                 <% end %>
-                              </tbody>
-                           </table>
-                        </div>
+                              <% end %>
+                           </tbody>
+                        </table>
                      </div>
                   </div>
                </div>
             </div>
-   </section>
-      </div>
-</div>
+         </div>
+</section>
 
    <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
       <div class="modal-dialog">

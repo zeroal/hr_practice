@@ -1,39 +1,35 @@
-<div class="wrapper">
-	<%= render "partials/left_navigation_bar" %>
-
-	<section>
-		<div class="main-content">
-	    	 <div class="col-lg-12">
-                  <div class="panel panel-default">
-                     <div class="panel-heading">Departments</div>
-                     <div class="panel-body">
-                        <div class="table-responsive table-bordered">
-                           <table class="table">
-                              <thead>
+<section>
+	<div class="main-content">
+    	 <div class="col-lg-12">
+               <div class="panel panel-default">
+                  <div class="panel-heading">Departments</div>
+                  <div class="panel-body">
+                     <div class="table-responsive table-bordered">
+                        <table class="table">
+                           <thead>
+                              <tr>
+                                 <th>Id</th>
+                                 <th>Name</th>
+                                 <th>Action</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                           	 <% @departments.each do |department| %>
                                  <tr>
-                                    <th>Id</th>
-                                    <th>Name</th>
-                                    <th>Action</th>
+                                    <td><%= department.id %></td>
+                                    <td><%= department.name%></td>
+                                    <td>
+								  		<%= link_to 'Edit', edit_admins_department_path(department) %> |
+								  		<%= link_to "Delete", admins_department_path(department), method: :delete, :class => 'navbar-link'  %>
+									</td>
                                  </tr>
-                              </thead>
-                              <tbody>
-                              	 <% @departments.each do |department| %>
-	                                 <tr>
-	                                    <td><%= department.id %></td>
-	                                    <td><%= department.name%></td>
-	                                    <td>
-									  		<%= link_to 'Edit', edit_admins_department_path(department) %> |
-									  		<%= link_to "Delete", admins_department_path(department), method: :delete, :class => 'navbar-link'  %>
-										</td>
-	                                 </tr>
-                                 <% end %>
-                              </tbody>
-                           </table>
-                        </div>
+                              <% end %>
+                           </tbody>
+                        </table>
                      </div>
                   </div>
                </div>
             </div>
-		</div>
-	</section>
-</div>
+         </div>
+	</div>
+</section>

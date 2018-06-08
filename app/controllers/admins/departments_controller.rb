@@ -1,4 +1,5 @@
 class Admins::DepartmentsController < AdminController
+	layout 'admin'
 	before_filter :find_all_department
 
 	def find_all_department
